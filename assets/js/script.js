@@ -1,9 +1,14 @@
+//const button = document.getElementById('navigateToShelter');
 
-// carousel
-// var instance = M.Carousel.init({
-//     fullWidth: true
-//   });
+ // navigation to shelter page
+        // button.addEventListener('click', function() {
+        //     console.log(window.location);
+        //     window.location.href = window.location.href+'/shelter.html';
+        // });
+
 $(document).ready(function(){
+
+    //carousel
     $('.carousel').carousel();
 
     //function for auto play carousel-slider
@@ -11,7 +16,12 @@ $(document).ready(function(){
         $('.carousel').carousel('next');
     },2000);
 
+    // sidenav
     $('.sidenav').sidenav();
-
+    //select
     $('select').formSelect();
+    //modal 
+    $('.modal').modal();
+
 });
+

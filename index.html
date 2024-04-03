@@ -23,30 +23,30 @@
         <i class="material-icons">menu</i>
       </a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Dog Breed</a></li>
-        <li><a href="#">Find Your Dog</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#dogBreed">Dog Breed</a></li>
+        <li><a href="#findUrDog">Find Your Dog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
 
     </div>
   </nav>
   <ul id="mobile-nav" class="sidenav">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Dog Breed</a></li>
-    <li><a href="#">Find Your Dog</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#dogBreed">Dog Breed</a></li>
+    <li><a href="#findUrDog">Find Your Dog</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
   <main>
     <!-- carousel item -->
-    <div class="carousel carousel-slider" data-indicators="true">
+    <div class="carousel carousel-slider" id="home" data-indicators="true">
       <a class="carousel-item" href="#one!"><img src="./assets/img/img1.jpg"></a>
       <a class="carousel-item" href="#two!"><img src="./assets/img/img2.jpg"></a>
       <a class="carousel-item" href="#three!"><img src="./assets/img/img3.jpg"></a>
       <a class="carousel-item" href="#four!"><img src="./assets/img/img4.jpg"></a>
     </div>
     <!-- dog breed img card -->
-    <div class="container">
+    <div class="container" id="dogBreed">
       <div class="row">
         <div class="col s12 m3">
           <div class="card">
@@ -58,7 +58,7 @@
                 I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <button class="btn modal-trigger teal" data-target="terms">Click to know more...</button>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
                 I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <button class="btn modal-trigger teal" data-target="terms">Click to know more... </button>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
                 I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <button class="btn modal-trigger teal" data-target="terms">Click to know more... </button>
             </div>
           </div>
         </div>
@@ -104,23 +104,23 @@
                 I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <button class="btn modal-trigger teal" data-target="terms">Click to know more...</button>
             </div>
           </div>
         </div>
 
       </div>
       <!-- Find your dog  -->
-      <div class="container">
+      <div class="container" id="findUrDog">
         <div class="row">
           <div class="col s12 m12">
             <div class="card-panel center z-depth-3">
               <h2>Find Your Dream Dog</h2>
-              <form action="">
+              <form action="shelter.html">
                 <div class="input-field col s12">
-                  <label>Browser Select</label>
+                  
                   <select class="browser-default">
-                    <option value="" disabled selected>Choose your option</option>
+                    <option value="" disabled selected>Choose your Breed</option>
                     <option value="1">Option 1</option>
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
@@ -131,7 +131,7 @@
                   <label for="zipcode">Zipcode</label>
                 </div>
                 <div class="clearfix"></div>
-                <input type="submit" name="submit" value="Find" class="btn">
+                <button type="submit" name="submit"  class="btn teal" id="">Find</button>
               </form>
             </div>
 
@@ -141,7 +141,7 @@
 
 
       <!-- contact form -->
-      <div class="container">
+      <div class="container" id="contact">
         <div class="row">
           <div class="col s12 m6">
             <div class="card-panel center z-depth-3">
@@ -172,6 +172,19 @@
             </div>
 
           </div>
+        </div>
+      </div>
+
+      <!-- modal for dog details -->
+      <div class="modal" id="terms">
+        <div class="modal-content">
+          <h3>Dog Details</h3>
+          <p>hey here is your dog details</p>
+          <img src="./assets/img/img1.jpg"> 
+        </div>
+        <div class="modal-footer">
+          <button class="btn teal">Agree</button>
+          <button class="btn red modal-close">Cancel</button>
         </div>
       </div>
 
