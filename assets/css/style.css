@@ -5,3 +5,7 @@ nav, .page-footer{
 .carousel{
     height:700px !important;
 }
+
+.card .card-image img{
+    height: 200px;
+}
