@@ -133,12 +133,64 @@ function getCModalApi() {
       console.log(data)
       // Create an image element
       const cmimg = document.createElement('img');
+      const bmimgp1 = document.getElementById('bmodal1');
 
       // Set the src attribute to the fetched image URL
       cmimg.src = imageUrl;
 
       // Append the image to a container in your HTML
-      document.getElementById('cmodal').appendChild(cmimg);
+      bmimgp1.appendChild(cmimg);
+    })
+    .catch(error => {
+      console.error('Error fetching image:', error);
+    });
+}
+
+// gets and displays the random image for the Shihtzu modal
+function getSModalApi() {
+  // fetch request gets a list of all the repos for the node.js organization
+  fetch('https://dog.ceo/api/breed/shihtzu/images/random')
+    .then(response => response.json())
+    .then(data => {
+      // Get the image URL from the API response
+      const imageUrl = data.message;
+      console.log(imageUrl)
+      console.log(data)
+      // Create an image element
+      const smimg = document.createElement('img');
+      const smimgp1 = document.getElementById('bmodal2');
+
+      // Set the src attribute to the fetched image URL
+      smimg.src = imageUrl;
+
+      // Append the image to a container in your HTML
+      smimgp1.appendChild(smimg);
+    })
+    .catch(error => {
+      console.error('Error fetching image:', error);
+    });
+}
+
+
+// gets and displays the random image for the Husky modal
+function getHModalApi() {
+  // fetch request gets a list of all the repos for the node.js organization
+  fetch('https://dog.ceo/api/breed/husky/images/random')
+    .then(response => response.json())
+    .then(data => {
+      // Get the image URL from the API response
+      const imageUrl = data.message;
+      console.log(imageUrl)
+      console.log(data)
+      // Create an image element
+      const hmimg = document.createElement('img');
+      const hmimgp1 = document.getElementById('bmodal3');
+
+      // Set the src attribute to the fetched image URL
+      hmimg.src = imageUrl;
+
+      // Append the image to a container in your HTML
+      hmimgp1.appendChild(hmimg);
     })
     .catch(error => {
       console.error('Error fetching image:', error);
@@ -350,6 +402,37 @@ function huskyInfo() {
     .catch(error => console.log('error', error))
 }
 
+
+const mySelect = document.getElementById('breedSelect');
+const myfindImg = document.getElementById('findImg');
+
+myfindImg.addEventListener('click', function() {
+  const selectedOption = mySelect.options[mySelect.selectedIndex].value;
+  console.log('Selected option:', selectedOption);
+  if(selectedOption==1){
+    console.log("beagle", selectedOption);
+    myfindImg.setAttribute('data-target', 'terms');
+    getBModalApi();
+    beagleInfo();
+
+  }else if(selectedOption==2){
+    console.log("chihuahua", selectedOption);
+    myfindImg.setAttribute('data-target', 'terms1');
+    chihuahuaInfo();
+    getCModalApi();
+  }else if(selectedOption==3){
+    console.log("shihtzu", selectedOption);
+    myfindImg.setAttribute('data-target', 'terms2');
+    shihtzuInfo();
+    getSModalApi();
+  }else{
+    console.log("husky", selectedOption);
+    myfindImg.setAttribute('data-target', 'terms3');
+    huskyInfo();
+    getHModalApi();
+  }
+});
+
 getFirstApi();
 
 getSecondApi();
@@ -358,18 +441,18 @@ getThirdApi();
 
 getFourthApi();
 
-beagleInfo();
+//beagleInfo();
 
-chihuahuaInfo();
+//chihuahuaInfo();
 
-shihtzuInfo();
+//shihtzuInfo();
 
-huskyInfo();
+//huskyInfo();
 
-getBModalApi();
+//getBModalApi();
 
-getCModalApi();
+//getCModalApi();
 
-// getSModalApi();
+ //getSModalApi();
 
-// getHModalAPI();
+//getHModalAPI();

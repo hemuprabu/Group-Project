@@ -9,3 +9,8 @@ nav, .page-footer{
 .card .card-image img{
     height: 200px;
 }
+.modal{
+    width: 50%;
+    height: 100%;
+    max-height: 700px;
+}
