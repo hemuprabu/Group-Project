@@ -138,16 +138,16 @@ function getCModalApi() {
       console.log(data)
       const bmimgp1 = document.getElementById('bmodal1');
       if (!document.getElementById('imgC')) {
-      // Create an image element
-      const cmimg = document.createElement('img');
-      cmimg.setAttribute('id', "imgC");
+        // Create an image element
+        const cmimg = document.createElement('img');
+        cmimg.setAttribute('id', "imgC");
 
-      // Set the src attribute to the fetched image URL
-      cmimg.src = imageUrl;
+        // Set the src attribute to the fetched image URL
+        cmimg.src = imageUrl;
 
-      // Append the image to a container in your HTML
-      bmimgp1.appendChild(cmimg);
-      }else {
+        // Append the image to a container in your HTML
+        bmimgp1.appendChild(cmimg);
+      } else {
         const cmimg_ref = document.getElementById('imgC');
         cmimg_ref.src = imageUrl;
       }
@@ -170,16 +170,16 @@ function getSModalApi() {
       console.log(data)
       const smimgp1 = document.getElementById('bmodal2');
       if (!document.getElementById('imgS')) {
-      // Create an image element
-      const smimg = document.createElement('img');
-      smimg.setAttribute('id', "imgS");
+        // Create an image element
+        const smimg = document.createElement('img');
+        smimg.setAttribute('id', "imgS");
 
-      // Set the src attribute to the fetched image URL
-      smimg.src = imageUrl;
+        // Set the src attribute to the fetched image URL
+        smimg.src = imageUrl;
 
-      // Append the image to a container in your HTML
-      smimgp1.appendChild(smimg);
-      }else {
+        // Append the image to a container in your HTML
+        smimgp1.appendChild(smimg);
+      } else {
         const smimg_ref = document.getElementById('imgS');
         smimg_ref.src = imageUrl;
       }
@@ -202,16 +202,16 @@ function getHModalApi() {
       console.log(data)
       const hmimgp1 = document.getElementById('bmodal3');
       if (!document.getElementById('imgH')) {
-      // Create an image element
-      const hmimg = document.createElement('img');
-      hmimg.setAttribute('id', "imgH");
+        // Create an image element
+        const hmimg = document.createElement('img');
+        hmimg.setAttribute('id', "imgH");
 
-      // Set the src attribute to the fetched image URL
-      hmimg.src = imageUrl;
+        // Set the src attribute to the fetched image URL
+        hmimg.src = imageUrl;
 
-      // Append the image to a container in your HTML
-      hmimgp1.appendChild(hmimg);
-      }else {
+        // Append the image to a container in your HTML
+        hmimgp1.appendChild(hmimg);
+      } else {
         const hmimg_ref = document.getElementById('imgH');
         hmimg_ref.src = imageUrl;
       }
@@ -468,22 +468,6 @@ getSecondApi();
 getThirdApi();
 
 getFourthApi();
-
-//beagleInfo();
-
-//chihuahuaInfo();
-
-//shihtzuInfo();
-
-//huskyInfo();
-
-//getBModalApi();
-
-//getCModalApi();
-
-//getSModalApi();
-
-//getHModalAPI();
 
 function sendMessage() {
 
