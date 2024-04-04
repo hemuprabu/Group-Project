@@ -14,3 +14,12 @@ nav, .page-footer{
     height: 100%;
     max-height: 700px;
 }
+body{
+    background: linear-gradient(to right, #8DE7F3, #CEEBEE);
+}
+h1, h2 {
+    color:#1ECBE1;
+}
+.card-panel .material-icons{
+    color: #1ECBE1;
+}
