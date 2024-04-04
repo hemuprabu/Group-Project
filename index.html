@@ -149,11 +149,11 @@
                   <label for="email">E-mail</label>
                 </div>
                 <div class="input-field">
-                  <textarea type="message" name="message" id="message" class="materialize-textarea"></textarea>
-                  <label for="message">Enter Message</label>
+                  <textarea id="subject" type="message" name="message"  class="materialize-textarea"></textarea>
+                  <label for="subject">Enter Message</label>
                 </div>
 
-                <input type="submit" name="submit" value="send" class="btn">
+                <input type="submit" name="submit" value="send" class="btn" onclick="sendMessage();">
               </form>
             </div>
 
@@ -247,6 +247,7 @@
   </footer>
 
   <!-- Compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

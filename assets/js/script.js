@@ -106,15 +106,20 @@ function getBModalApi() {
       const imageUrl = data.message;
       console.log(imageUrl)
       console.log(data)
-      // Create an image element
-      const bmimg = document.createElement('img');
       const bmimgp = document.getElementById('bmodal');
+      if (!document.getElementById('imgB')) {
+        // Create an image element
+        const bmimg = document.createElement('img');
+        bmimg.setAttribute('id', "imgB");
+        // Set the src attribute to the fetched image URL
+        bmimg.src = imageUrl;
+        // Append the image to a container in your HTML
+        bmimgp.appendChild(bmimg);
+      } else {
+        const bmimg_ref = document.getElementById('imgB');
+        bmimg_ref.src = imageUrl;
+      }
 
-      // Set the src attribute to the fetched image URL
-      bmimg.src = imageUrl;
-
-      // Append the image to a container in your HTML
-      bmimgp.appendChild(bmimg);
     })
     .catch(error => {
       console.error('Error fetching image:', error);
@@ -131,15 +136,22 @@ function getCModalApi() {
       const imageUrl = data.message;
       console.log(imageUrl)
       console.log(data)
+      const bmimgp1 = document.getElementById('bmodal1');
+      if (!document.getElementById('imgC')) {
       // Create an image element
       const cmimg = document.createElement('img');
-      const bmimgp1 = document.getElementById('bmodal1');
+      cmimg.setAttribute('id', "imgC");
 
       // Set the src attribute to the fetched image URL
       cmimg.src = imageUrl;
 
       // Append the image to a container in your HTML
       bmimgp1.appendChild(cmimg);
+      }else {
+        const cmimg_ref = document.getElementById('imgC');
+        cmimg_ref.src = imageUrl;
+      }
+
     })
     .catch(error => {
       console.error('Error fetching image:', error);
@@ -156,15 +168,21 @@ function getSModalApi() {
       const imageUrl = data.message;
       console.log(imageUrl)
       console.log(data)
+      const smimgp1 = document.getElementById('bmodal2');
+      if (!document.getElementById('imgS')) {
       // Create an image element
       const smimg = document.createElement('img');
-      const smimgp1 = document.getElementById('bmodal2');
+      smimg.setAttribute('id', "imgS");
 
       // Set the src attribute to the fetched image URL
       smimg.src = imageUrl;
 
       // Append the image to a container in your HTML
       smimgp1.appendChild(smimg);
+      }else {
+        const smimg_ref = document.getElementById('imgS');
+        smimg_ref.src = imageUrl;
+      }
     })
     .catch(error => {
       console.error('Error fetching image:', error);
@@ -182,15 +200,21 @@ function getHModalApi() {
       const imageUrl = data.message;
       console.log(imageUrl)
       console.log(data)
+      const hmimgp1 = document.getElementById('bmodal3');
+      if (!document.getElementById('imgH')) {
       // Create an image element
       const hmimg = document.createElement('img');
-      const hmimgp1 = document.getElementById('bmodal3');
+      hmimg.setAttribute('id', "imgH");
 
       // Set the src attribute to the fetched image URL
       hmimg.src = imageUrl;
 
       // Append the image to a container in your HTML
       hmimgp1.appendChild(hmimg);
+      }else {
+        const hmimg_ref = document.getElementById('imgH');
+        hmimg_ref.src = imageUrl;
+      }
     })
     .catch(error => {
       console.error('Error fetching image:', error);
@@ -406,30 +430,34 @@ function huskyInfo() {
 const mySelect = document.getElementById('breedSelect');
 const myfindImg = document.getElementById('findImg');
 
-myfindImg.addEventListener('click', function() {
+myfindImg.addEventListener('click', function () {
   const selectedOption = mySelect.options[mySelect.selectedIndex].value;
   console.log('Selected option:', selectedOption);
-  if(selectedOption==1){
+  if (selectedOption == 1) {
     console.log("beagle", selectedOption);
     myfindImg.setAttribute('data-target', 'terms');
     getBModalApi();
     beagleInfo();
 
-  }else if(selectedOption==2){
+
+  } else if (selectedOption == 2) {
     console.log("chihuahua", selectedOption);
     myfindImg.setAttribute('data-target', 'terms1');
     chihuahuaInfo();
     getCModalApi();
-  }else if(selectedOption==3){
+    return
+  } else if (selectedOption == 3) {
     console.log("shihtzu", selectedOption);
     myfindImg.setAttribute('data-target', 'terms2');
     shihtzuInfo();
     getSModalApi();
-  }else{
+    return
+  } else {
     console.log("husky", selectedOption);
     myfindImg.setAttribute('data-target', 'terms3');
     huskyInfo();
     getHModalApi();
+    return
   }
 });
 
@@ -453,6 +481,25 @@ getFourthApi();
 
 //getCModalApi();
 
- //getSModalApi();
+//getSModalApi();
 
 //getHModalAPI();
+
+function sendMessage() {
+
+  emailjs.init("");
+  var serviceID = "service_or4uqxi";
+  var templateID = "";
+  var params = {
+    sendername: document.querySelector("#user").value,
+    senderemail: document.querySelector("#email").value,
+    subject: document.querySelector("#subject").value,
+
+
+  }
+  emailjs.send(serviceID, templateID, params)
+    .then(res => {
+      alert('Thank you, ' + params['sendername'] + 'Your message has been sent');
+    })
+    .catch();
+}
