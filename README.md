@@ -20,8 +20,9 @@ Be responsive.
 Have a polished UI.
 ```
 ## Screenshot
+![Screenshot 2024-04-04 145847](https://github.com/hemuprabu/Paws_of_the_Family/assets/108079829/2441ccd8-0dc2-47c6-a048-888660c8bce6)
 ![Screenshot 2024-04-04 145857](https://github.com/hemuprabu/Weather-Dashboard/assets/108079829/72a43413-dabb-4911-9225-55d328496f37)
-![StudentProfile](https://github.com/hemuprabu/Weather-Dashboard/assets/108079829/20430157-6655-41b7-8a6b-7bf44be37c9e)
+
 ## Contact
 Git Link: [Github_URL]https://github.com/hemuprabu/Paws_of_the_Family
 ## Technologies Used
